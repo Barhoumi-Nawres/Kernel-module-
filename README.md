@@ -8,3 +8,7 @@ Sources (https://gitlab.cs.pub.ro/so2/so2-labs)
 -clone this repostory (https://gitlab.cs.pub.ro/so2/so2-labs.git)
 
 -run this command (sudo ./local.sh docker interactive --privileged)
+
+-LABS=kernel_modules make skels
+
+-make console
