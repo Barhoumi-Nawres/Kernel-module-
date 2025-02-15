@@ -19,7 +19,7 @@ Sources (https://gitlab.cs.pub.ro/so2/so2-labs)
 kernel:
 1-compile or build tools mconf.
 2-load K config 
-3-you will get menuconfig (so you can active or desactive symbols using this command (make menuconfig )
+3-you will get menuconfig (so you can active ,desactive or search for  symbols using this command (make menuconfig )
 
 
 ##
