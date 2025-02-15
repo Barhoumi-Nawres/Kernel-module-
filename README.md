@@ -1,4 +1,4 @@
-# Kernel-module-
+# Kernel-module-(Embedded LInux :
 kernel module 
 # steps :
 Sources (https://gitlab.cs.pub.ro/so2/so2-labs)
@@ -11,7 +11,16 @@ Sources (https://gitlab.cs.pub.ro/so2/so2-labs)
 
 -LABS=kernel_modules make skels
 
--make console
+-make console (to be in demu )
+
+
+# compilation of kernel modules 
+
+kernel:
+1-compile or build tools mconf.
+2-load K config 
+3-you will get menuconfig (so you can active or desactive symbols using this command (make menuconfig )
+
 
 ##
 Create a new directory under skels (inside the container):
