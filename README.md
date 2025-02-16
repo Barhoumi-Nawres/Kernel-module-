@@ -92,7 +92,7 @@ make[1]: Leaving directory '/linux
 
 
 Go to the other terminal (same container in which you run make console to run Qemu) and load the module
-
+ open QEMU 
 cd skels/module 
 insmod techleef.ko
 dmesg |tail -1 
