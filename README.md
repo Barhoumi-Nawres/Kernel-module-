@@ -22,6 +22,8 @@ kernel:
 3-you will get menuconfig (so you can active ,desactive or search for  symbols using this command (make menuconfig )
 
 
+ELF relocatable =not executable
+
 ##
 Create a new directory under skels (inside the container):
 Create 3 files Kbuild, Makefile and techleef.c:
