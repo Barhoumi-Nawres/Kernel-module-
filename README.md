@@ -39,54 +39,56 @@ techleef.c:
 #include <linux/kernel.h>
 #include <linux/init.h>
 
-MODULE_DESCRIPTION("TechLeef hello module");
-MODULE_AUTHOR("TechLeef");
+MODULE_DESCRIPTION("kernel module");
+MODULE_AUTHOR("module");
 MODULE_LICENSE("GPL");
 
-static int __init techleef_init(void){
-    pr_debug("Hello TechLeef Module\n");
+static int __init my_module_init(void)
+{
+    pr_debug("hello from the kernel module\n");
     return 0;
 }
 
-static void __exit techleef_exit(void){
-    pr_debug("GoodBye from TechLeef Module\n");
+static void __exit my_module_exit(void)
+{
+    pr_debug("good bye from kernel module \n");
 }
 
-module_init(techleef_init);
-module_exit(techleef_exit);
+module_init(my_module_init);
+module_exit(my_module_exit);
+
 
 
 Kbuild:
 
-ccflags-y += -DDEBUG
-obj-m = techleef.o
+obj-m=techleef.o
 
 
 Makefile:
 
 KDIR = /linux
 
+
 kbuild:
-    make -C $(KDIR) M=$(shell pwd)
+	make -C $(KDIR) M=$(shell pwd)
 
 clean:
-    make -C $(KDIR) M=$(shell pwd) clean
+	make -C $(KDIR) M=$(shell pwd) clean 
 
 
-Compile
-
+And then run :
 make
-
 
 You should see:
 
-make -C /linux M=/linux/tools/labs/skels/techleef
+oot@nawres:/linux/tools/labs/skels/module# make
+make -C /linux M=/linux/tools/labs/skels/module
 make[1]: Entering directory '/linux'
-  CC [M]  /linux/tools/labs/skels/techleef/techleef.o
-  MODPOST /linux/tools/labs/skels/techleef/Module.symvers
-  CC [M]  /linux/tools/labs/skels/techleef/techleef.mod.o
-  LD [M]  /linux/tools/labs/skels/techleef/techleef.ko
-make[1]: Leaving directory '/linux'
+  CC [M]  /linux/tools/labs/skels/module/techleef.o
+  MODPOST /linux/tools/labs/skels/module/Module.symvers
+  CC [M]  /linux/tools/labs/skels/module/techleef.mod.o
+  LD [M]  /linux/tools/labs/skels/module/techleef.ko
+make[1]: Leaving directory '/linux
 
 
 Go to the other terminal (same container in which you run make console to run Qemu) and load the module
