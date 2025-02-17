@@ -97,3 +97,7 @@ cd skels/module
 insmod techleef.ko
 dmesg |tail -1 
 or dmesg |tail -2 / dmesg 
+
+
+yocto limit thread :
+BB_NUMBER_THREADS=4 PARALLEL_MAKE="-j 3" bitbake recipe 
